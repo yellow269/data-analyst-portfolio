@@ -18,13 +18,14 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://julianlombard.com"),
   title: {
-    default: "Julian Lombard | Data Analyst & BI Specialist",
+    default: "Julian Lombard | Data Analyst & Business Intelligence Portfolio",
     template: "%s | Julian Lombard",
   },
   description:
-    "Data Analyst specializing in Power BI, SQL, Python, and Excel. Transforming raw data into actionable insights through dashboards, analytics, and business intelligence solutions.",
+    "Junior Data Analyst specialising in Power BI, Excel, SQL and Python. Explore my analytics projects, dashboards and professional experience.",
   keywords: [
     "Data Analyst",
+    "Junior Data Analyst",
     "Business Intelligence",
     "Power BI",
     "SQL",
@@ -33,20 +34,26 @@ export const metadata: Metadata = {
     "Data Visualization",
     "Dashboard Development",
     "Data Analytics",
+    "Data Cleaning",
+    "Data Reporting",
+    "Data Automation",
     "Freelance Data Analyst",
+    "Remote Data Analyst",
+    "Mossel Bay",
+    "South Africa",
   ],
-  authors: [{ name: "Julian Lombard" }],
-  creator: "Julian Lombard",
-  publisher: "Julian Lombard",
+  authors: [{ name: "Julian Paul Lombard" }],
+  creator: "Julian Paul Lombard",
+  publisher: "Julian Paul Lombard",
   robots: "index, follow",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://julianlombard.com",
-    siteName: "Julian Lombard | Data Analyst",
-    title: "Julian Lombard | Data Analyst & BI Specialist",
+    siteName: "Julian Lombard | Data Analyst Portfolio",
+    title: "Julian Lombard | Data Analyst & Business Intelligence Portfolio",
     description:
-      "Data Analyst specializing in Power BI, SQL, Python, and Excel. Transforming raw data into actionable insights.",
+      "Junior Data Analyst specialising in Power BI, Excel, SQL and Python. Explore my analytics projects, dashboards and professional experience.",
     images: [
       {
         url: "/og-image.png",
@@ -58,9 +65,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Julian Lombard | Data Analyst & BI Specialist",
+    title: "Julian Lombard | Data Analyst & Business Intelligence Portfolio",
     description:
-      "Data Analyst specializing in Power BI, SQL, Python, and Excel. Transforming raw data into actionable insights.",
+      "Junior Data Analyst specialising in Power BI, Excel, SQL and Python. Explore my analytics projects, dashboards and professional experience.",
     images: ["/og-image.png"],
     creator: "@julianlombard",
   },

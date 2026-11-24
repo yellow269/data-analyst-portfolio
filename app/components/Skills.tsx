@@ -2,75 +2,50 @@
 
 const skillCategories = [
   {
+    category: "Data Analysis",
+    color: "green",
+    skills: [
+      { name: "Python", level: 85, icon: "🐍" },
+      { name: "Pandas", level: 85, icon: "📊" },
+      { name: "NumPy", level: 80, icon: "🔢" },
+      { name: "Data Cleaning", level: 90, icon: "🧹" },
+      { name: "Data Analysis", level: 85, icon: "📈" },
+      { name: "Data Visualisation", level: 85, icon: "📉" },
+    ],
+  },
+  {
     category: "Business Intelligence",
     color: "violet",
     skills: [
-      { name: "Power BI", level: 95, icon: "📊" },
-      { name: "DAX", level: 90, icon: "🧮" },
-      { name: "Power Query (M)", level: 85, icon: "🔄" },
-      { name: "Data Modeling", level: 90, icon: "🏗️" },
-      { name: "Row-Level Security", level: 80, icon: "🔒" },
-      { name: "Power BI Service", level: 85, icon: "☁️" },
+      { name: "Power BI", level: 85, icon: "📊" },
+      { name: "Data Visualisation", level: 85, icon: "📈" },
+      { name: "Dashboard Development", level: 80, icon: "📋" },
+      { name: "Business Intelligence", level: 85, icon: "💡" },
+      { name: "Data Reporting", level: 90, icon: "📄" },
+      { name: "Data Automation", level: 80, icon: "⚙️" },
     ],
   },
   {
     category: "Databases & SQL",
     color: "blue",
     skills: [
-      { name: "SQL (T-SQL, PostgreSQL)", level: 95, icon: "🗄️" },
-      { name: "Query Optimization", level: 85, icon: "⚡" },
-      { name: "Stored Procedures", level: 80, icon: "📦" },
-      { name: "Database Design", level: 75, icon: "📐" },
-      { name: "ETL/ELT Pipelines", level: 85, icon: "🔄" },
-      { name: "BigQuery / Snowflake", level: 70, icon: "☁️" },
+      { name: "SQL", level: 85, icon: "🗄️" },
+      { name: "Queries", level: 85, icon: "🔍" },
+      { name: "Data Management", level: 80, icon: "📦" },
+      { name: "Data Cleaning", level: 85, icon: "🧹" },
+      { name: "ETL/ELT Basics", level: 75, icon: "🔄" },
     ],
   },
   {
-    category: "Programming & Analysis",
-    color: "green",
-    skills: [
-      { name: "Python (pandas, NumPy)", level: 90, icon: "🐍" },
-      { name: "Data Visualization (Matplotlib, Seaborn, Plotly)", level: 85, icon: "📈" },
-      { name: "Machine Learning (scikit-learn)", level: 70, icon: "🤖" },
-      { name: "Jupyter Notebooks", level: 90, icon: "📓" },
-      { name: "Statistical Analysis", level: 80, icon: "📊" },
-      { name: "API Integration", level: 75, icon: "🔌" },
-    ],
-  },
-  {
-    category: "Spreadsheet & Automation",
+    category: "Spreadsheets & Automation",
     color: "amber",
     skills: [
-      { name: "Advanced Excel", level: 95, icon: "📑" },
-      { name: "Power Query", level: 90, icon: "🔄" },
-      { name: "Power Pivot / DAX", level: 85, icon: "🧮" },
+      { name: "Microsoft Excel", level: 95, icon: "📑" },
+      { name: "Data Cleaning", level: 90, icon: "🧹" },
+      { name: "Reporting", level: 90, icon: "📄" },
+      { name: "Power Query", level: 85, icon: "🔄" },
       { name: "VBA / Macros", level: 75, icon: "⚙️" },
-      { name: "Financial Modeling", level: 85, icon: "💰" },
-      { name: "Office Scripts (TypeScript)", level: 70, icon: "📝" },
-    ],
-  },
-  {
-    category: "Visualization & Design",
-    color: "pink",
-    skills: [
-      { name: "Dashboard Design Principles", level: 90, icon: "🎨" },
-      { name: "Data Storytelling", level: 85, icon: "📖" },
-      { name: "Tableau", level: 70, icon: "📊" },
-      { name: "Custom Visuals", level: 75, icon: "🔧" },
-      { name: "Color Theory & Accessibility", level: 80, icon: "🌈" },
-      { name: "UX for Data Products", level: 75, icon: "👤" },
-    ],
-  },
-  {
-    category: "Soft Skills & Process",
-    color: "cyan",
-    skills: [
-      { name: "Stakeholder Communication", level: 90, icon: "💬" },
-      { name: "Requirements Gathering", level: 85, icon: "📋" },
-      { name: "Agile / Scrum", level: 80, icon: "🏃" },
-      { name: "Documentation & Governance", level: 85, icon: "📚" },
-      { name: "Training & Enablement", level: 80, icon: "🎓" },
-      { name: "Problem Solving", level: 95, icon: "🧩" },
+      { name: "Financial Modeling", level: 80, icon: "💰" },
     ],
   },
 ];
@@ -107,13 +82,13 @@ export default function Skills() {
             <span className="gradient-text">Master</span>
           </h2>
           <p className="text-slate-300 text-lg max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: "100ms" }}>
-            Proficient across the modern data stack — from database design to
-            executive dashboards. I continuously expand my toolkit to deliver
-            the best solution for each unique challenge.
+            Proficient across the modern data stack — from data cleaning to
+            executive dashboards. Built through 5 years of hands-on business
+            data experience and formal certification.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillCategories.map((cat, catIndex) => {
             const colorClasses = getColorClasses(cat.color);
             return (
@@ -175,14 +150,11 @@ export default function Skills() {
         </div>
 
         <div className="mt-16 glass rounded-2xl p-8 animate-fade-in" style={{ animationDelay: "600ms" }}>
-          <h3 className="text-2xl font-bold mb-6 text-center">Certifications & Continuous Learning</h3>
+          <h3 className="text-2xl font-bold mb-6 text-center">Education & Certifications</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              "Microsoft Certified: Power BI Data Analyst Associate",
-              "Microsoft Certified: Azure Data Fundamentals",
-              "Google Data Analytics Professional Certificate",
-              "SQL for Data Science (UC Davis)",
-              "Python for Everybody (University of Michigan)",
+              "Certificate: Data Analyst to Data Scientist — Optimi College (2023)",
+              "Matric (National Senior Certificate) — Mathematics & Physical Sciences (2018)",
             ].map((cert, index) => (
               <span
                 key={cert}

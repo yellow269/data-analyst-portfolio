@@ -8,15 +8,15 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="text-2xl font-bold gradient-text mb-4">JL</div>
             <p className="text-slate-400 max-w-xs mb-6">
-              Data Analyst & Business Intelligence Specialist transforming raw data
+              Junior Data Analyst & Business Intelligence Specialist transforming raw data
               into actionable insights through analytics, dashboards, and automation.
             </p>
             <div className="flex gap-4">
               <a
-                href="https://linkedin.com/in/julianlombard"
+                href="https://www.linkedin.com/in/julian-lombard-21b877277/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl bg-navy-800 flex items-center justify-center text-slate-400 hover:text-violet-400 hover:bg-navy-700 transition-all"
+                className="w-10 h-10 rounded-xl bg-navy-800 flex items-center justify-center text-slate-400 hover:text-blue-400 hover:bg-navy-700 transition-all"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -35,7 +35,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="mailto:julian.lombard@email.com"
+                href="mailto:julianlombard333@gmail.com"
                 className="w-10 h-10 rounded-xl bg-navy-800 flex items-center justify-center text-slate-400 hover:text-violet-400 hover:bg-navy-700 transition-all"
                 aria-label="Email"
               >
@@ -47,23 +47,23 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <nav aria-label="Services">
+            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <nav aria-label="Quick Links">
               <ul className="space-y-2">
                 {[
-                  "Data Analysis & Reporting",
-                  "Power BI Dashboards",
-                  "SQL Database & Analytics",
-                  "Python Automation & ML",
-                  "Excel Automation",
-                  "Data Strategy & Advisory",
-                ].map((service) => (
-                  <li key={service}>
+                  { label: "About", href: "#about" },
+                  { label: "Skills", href: "#skills" },
+                  { label: "Projects", href: "#projects" },
+                  { label: "Resume", href: "/resume" },
+                  { label: "Services", href: "#services" },
+                  { label: "Contact", href: "#contact" },
+                ].map((item) => (
+                  <li key={item.label}>
                     <a
-                      href="#services"
+                      href={item.href}
                       className="text-slate-400 hover:text-violet-400 transition-colors text-sm"
                     >
-                      {service}
+                      {item.label}
                     </a>
                   </li>
                 ))}
@@ -76,14 +76,14 @@ export default function Footer() {
             <nav aria-label="Projects">
               <ul className="space-y-2">
                 {[
-                  "Power BI Projects",
-                  "SQL Projects",
-                  "Python Projects",
-                  "Excel Projects",
+                  "Superstore Sales Dashboard",
+                  "Customer Analytics",
+                  "Python Automation",
+                  "Financial Reporting",
                 ].map((project) => (
                   <li key={project}>
                     <a
-                      href={`#${project.toLowerCase().replace(/\s+/g, "")}`}
+                      href="#projects"
                       className="text-slate-400 hover:text-violet-400 transition-colors text-sm"
                     >
                       {project}
@@ -98,7 +98,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-navy-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-slate-500 text-sm">
-              © {currentYear} Julian Lombard. All rights reserved.
+              © {currentYear} Julian Paul Lombard. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <a
@@ -106,12 +106,6 @@ export default function Footer() {
                 className="text-slate-500 hover:text-violet-400 transition-colors"
               >
                 Privacy Policy
-              </a>
-              <a
-                href="/terms"
-                className="text-slate-500 hover:text-violet-400 transition-colors"
-              >
-                Terms of Service
               </a>
             </div>
           </div>

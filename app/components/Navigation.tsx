@@ -7,10 +7,7 @@ const navItems = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
-  { href: "#powerbi", label: "Power BI" },
-  { href: "#sql", label: "SQL" },
-  { href: "#python", label: "Python" },
-  { href: "#excel", label: "Excel" },
+  { href: "/resume", label: "Resume" },
   { href: "#services", label: "Services" },
   { href: "#contact", label: "Contact" },
 ];
@@ -90,7 +87,7 @@ export default function Navigation() {
 
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="https://linkedin.com/in/julian"
+              href="https://www.linkedin.com/in/julian-lombard-21b877277/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-slate-400 hover:text-violet-400 transition-colors"
@@ -106,7 +103,7 @@ export default function Navigation() {
               </svg>
             </a>
             <a
-              href="https://github.com/julian"
+              href="https://github.com/julianlombard"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-slate-400 hover:text-violet-400 transition-colors"
@@ -122,7 +119,7 @@ export default function Navigation() {
               </svg>
             </a>
             <a
-              href="mailto:julian@email.com"
+              href="mailto:julianlombard333@gmail.com"
               className="px-4 py-2 bg-violet-500 hover:bg-violet-600 text-white font-medium rounded-lg transition-colors"
             >
               Contact
@@ -173,7 +170,7 @@ export default function Navigation() {
             ))}
             <div className="flex flex-col gap-3 pt-4 border-t border-navy-700">
               <a
-                href="https://linkedin.com/in/julian"
+                href="https://www.linkedin.com/in/julian-lombard-21b877277/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-4 py-3 text-slate-300 hover:text-violet-400 transition-colors"
@@ -184,7 +181,7 @@ export default function Navigation() {
                 LinkedIn
               </a>
               <a
-                href="https://github.com/julian"
+                href="https://github.com/julianlombard"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-4 py-3 text-slate-300 hover:text-violet-400 transition-colors"
@@ -195,7 +192,7 @@ export default function Navigation() {
                 GitHub
               </a>
               <a
-                href="mailto:julian@email.com"
+                href="mailto:julianlombard333@gmail.com"
                 className="text-center px-4 py-3 bg-violet-500 hover:bg-violet-600 text-white font-medium rounded-lg transition-colors"
               >
                 Contact Me

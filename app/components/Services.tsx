@@ -4,31 +4,60 @@ import Link from "next/link";
 
 const services = [
   {
-    id: "data-analysis",
+    id: "excel-data-cleaning",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
       </svg>
     ),
-    title: "Data Analysis & Reporting",
+    title: "Excel Data Cleaning",
     description:
-      "End-to-end analytical projects from data discovery to executive presentations. Statistical analysis, hypothesis testing, cohort analysis, and automated reporting pipelines.",
+      "Clean, standardize, and validate messy datasets in Excel. Remove duplicates, fix formatting, handle missing values, and prepare data for analysis.",
     features: [
-      "Exploratory Data Analysis (EDA)",
-      "Statistical Modeling & Hypothesis Testing",
-      "Automated Report Generation",
-      "Executive Dashboards & Presentations",
-      "Ad-hoc Analysis & Deep Dives",
+      "Duplicate detection & removal",
+      "Data standardization (trim, case, formats)",
+      "Missing value handling & imputation",
+      "Data validation rules & error flagging",
+      "Automated cleaning with Power Query",
+      "Reusable cleaning templates",
     ],
     deliverables: [
-      "Jupyter Notebooks / R Markdown",
-      "Automated PDF/Excel Reports",
-      "Interactive Dashboards",
-      "Documented Methodology",
+      "Cleaned dataset (.xlsx/.csv)",
+      "Power Query steps (reproducible)",
+      "Data quality report",
+      "Validation rules documentation",
     ],
-    price: "Starting at $2,500",
-    timeline: "2-4 weeks",
+    price: "From R2,500 / $140",
+    timeline: "3-7 days",
     popular: false,
+  },
+  {
+    id: "excel-automation",
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    ),
+    title: "Excel Automation",
+    description:
+      "Automate repetitive Excel tasks with VBA macros, Office Scripts, or Power Query. Reduce manual work from hours to minutes.",
+    features: [
+      "VBA macros for repetitive workflows",
+      "Office Scripts for Excel Online",
+      "Power Query automated refresh",
+      "Custom functions (UDFs) & add-ins",
+      "Scheduled report generation",
+      "Email/PDF export automation",
+    ],
+    deliverables: [
+      "Macro-enabled workbook (.xlsm)",
+      "Office Scripts (TypeScript) code",
+      "User guide & documentation",
+      "Installation & setup instructions",
+    ],
+    price: "From R5,000 / $280",
+    timeline: "1-3 weeks",
+    popular: true,
   },
   {
     id: "powerbi-dashboards",
@@ -37,142 +66,110 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       </svg>
     ),
-    title: "Power BI Dashboard Development",
+    title: "Power BI Dashboards",
     description:
-      "Enterprise Power BI solutions: data modeling, DAX measures, row-level security, DirectQuery optimization, deployment pipelines, and user training.",
+      "Interactive business dashboards with DAX measures, drill-through, bookmarks, and mobile-ready layouts. Deploy to Power BI Service with scheduled refresh.",
     features: [
-      "Star Schema Data Modeling",
-      "Advanced DAX & Time Intelligence",
-      "Row-Level Security (RLS)",
-      "DirectQuery & Composite Models",
-      "Deployment Pipelines (Dev/Test/Prod)",
-      "User Training & Documentation",
+      "Star schema data modeling",
+      "Advanced DAX & time intelligence",
+      "Drill-through & cross-filtering",
+      "Row-level security (RLS)",
+      "Mobile-optimized layouts",
+      "Scheduled refresh & email subscriptions",
     ],
     deliverables: [
-      ".PBIX Files with Documentation",
-      "Data Model Diagram & Dictionary",
-      "DAX Measure Library",
-      "RLS Configuration Guide",
-      "Admin & User Training Sessions",
+      ".PBIX file with full documentation",
+      "Data model diagram & dictionary",
+      "DAX measure library",
+      "RLS setup guide",
+      "Deployment checklist",
     ],
-    price: "Starting at $3,500",
+    price: "From R15,000 / $850",
     timeline: "3-6 weeks",
-    popular: true,
+    popular: false,
   },
   {
-    id: "sql-database",
+    id: "sql-data-analysis",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
       </svg>
     ),
-    title: "SQL Database & Analytics",
+    title: "SQL Data Analysis",
     description:
-      "Database design, query optimization, data warehouse architecture, ETL/ELT pipelines, and real-time analytics layers. PostgreSQL, SQL Server, Snowflake, BigQuery.",
+      "Complex SQL queries, stored procedures, and data extraction for reporting. Query optimization, indexing, and performance tuning.",
     features: [
-      "Dimensional Data Warehouse Design",
-      "Query Tuning & Index Optimization",
-      "ETL/ELT Pipeline Development",
-      "Materialized Views & Caching",
-      "Data Quality & Testing Frameworks",
-      "Migration & Modernization",
+      "Complex analytical queries (CTEs, windows)",
+      "Stored procedures & functions",
+      "Query optimization & indexing",
+      "Data extraction for BI tools",
+      "Schema design & normalization",
+      "PostgreSQL / SQL Server / MySQL",
     ],
     deliverables: [
-      "ER Diagrams & Schema Scripts",
-      "Optimized Queries & Indexes",
-      "dbt/Airflow Pipeline Code",
-      "Data Quality Test Suite",
-      "Performance Benchmark Report",
+      "Optimized SQL scripts (.sql)",
+      "Query execution plans",
+      "Index recommendations",
+      "Data dictionary & ER diagram",
     ],
-    price: "Starting at $3,000",
-    timeline: "3-5 weeks",
+    price: "From R7,500 / $420",
+    timeline: "2-4 weeks",
     popular: false,
   },
   {
-    id: "python-ml",
+    id: "python-data-processing",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
       </svg>
     ),
-    title: "Python Automation & ML",
+    title: "Python Data Processing",
     description:
-      "Custom Python solutions for ETL automation, forecasting, anomaly detection, NLP, and machine learning. Production-ready code with testing, CI/CD, and monitoring.",
+      "Custom Python scripts for ETL, data cleaning, analysis, and automation using pandas, NumPy, and modern data libraries.",
     features: [
-      "ETL Pipeline Frameworks",
-      "Time Series Forecasting (Prophet/ML)",
-      "Anomaly Detection Systems",
-      "NLP & Text Analytics",
-      "ML Model Training & Deployment",
-      "API Development (FastAPI/Flask)",
+      "ETL pipelines (pandas, SQLAlchemy)",
+      "Automated data cleaning & validation",
+      "Exploratory data analysis (EDA)",
+      "Statistical analysis & visualization",
+      "Jupyter notebooks for reproducibility",
+      "Scheduled automation (cron/Airflow)",
     ],
     deliverables: [
-      "Modular, Tested Python Package",
-      "Docker Container & K8s Manifests",
-      "CI/CD Pipeline (GitHub Actions)",
-      "Monitoring & Alerting Setup",
-      "Model Cards & Documentation",
+      "Python package / scripts (.py/.ipynb)",
+      "Requirements.txt / environment.yml",
+      "Documentation & usage examples",
+      "Unit tests (pytest)",
     ],
-    price: "Starting at $4,000",
-    timeline: "4-8 weeks",
+    price: "From R10,000 / $560",
+    timeline: "2-5 weeks",
     popular: false,
   },
   {
-    id: "excel-automation",
+    id: "business-reporting",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       </svg>
     ),
-    title: "Excel Automation & Modeling",
+    title: "Business Reporting",
     description:
-      "Advanced Excel solutions: financial models, dynamic dashboards, Power Query ETL, Power Pivot/DAX, VBA macros, Office Scripts, and custom add-ins.",
+      "Professional business reports combining Excel modeling, Power BI dashboards, and automated distribution. Financial, operational, and KPI reporting.",
     features: [
-      "3-Statement Financial Models",
-      "Dynamic Dashboard Templates",
-      "Power Query Data Pipelines",
-      "VBA / Office Scripts Automation",
-      "Custom Ribbon & Add-ins",
-      "Model Auditing & Documentation",
+      "Financial statements (P&L, BS, CF)",
+      "KPI dashboards & scorecards",
+      "Variance & trend analysis",
+      "Automated report generation",
+      "Executive summary templates",
+      "Multi-format export (PDF, Excel, PPT)",
     ],
     deliverables: [
-      ".XLSB/.XLSM Model Files",
-      "User Guide & Assumptions Doc",
-      "VBA/TypeScript Source Code",
-      "Validation & Test Cases",
-      "Handoff Training Session",
+      "Report templates (.xlsx/.pbix)",
+      "Automation scripts",
+      "Distribution setup (email/SharePoint)",
+      "User guide & maintenance docs",
     ],
-    price: "Starting at $2,000",
-    timeline: "2-4 weeks",
-    popular: false,
-  },
-  {
-    id: "consulting-advisory",
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    ),
-    title: "Data Strategy & Advisory",
-    description:
-      "Strategic consulting for data maturity assessment, tool selection, team structure, governance frameworks, and analytics roadmap development.",
-    features: [
-      "Data Maturity Assessment",
-      "Tool & Platform Selection",
-      "Analytics Roadmap Development",
-      "Data Governance Framework",
-      "Team Structure & Hiring Guidance",
-      "KPI Definition & Measurement",
-    ],
-    deliverables: [
-      "Assessment Report & Scorecard",
-      "Strategic Roadmap (12-36 months)",
-      "Tool Evaluation Matrix",
-      "Governance Policy Documents",
-      "Executive Presentation Deck",
-    ],
-    price: "Starting at $5,000",
-    timeline: "4-6 weeks",
+    price: "From R12,000 / $680",
+    timeline: "3-5 weeks",
     popular: false,
   },
 ];
@@ -197,9 +194,9 @@ export default function Services() {
             <span className="gradient-text">Engagements</span>
           </h2>
           <p className="text-slate-300 text-lg max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: "100ms" }}>
-            End-to-end data analytics and business intelligence services.
-            Fixed-scope engagements with clear deliverables, timelines, and
-            knowledge transfer included.
+            Fixed-scope data analytics and business intelligence services for international clients,
+            remote employers, and small businesses. Clear deliverables, timelines, and knowledge transfer included.
+            Prices in ZAR (R) and USD ($) — payment in your preferred currency.
           </p>
         </div>
 

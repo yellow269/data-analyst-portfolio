@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function Contact() {
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
-    service: "",
+    service: searchParams.get("service") || "",
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -16,23 +18,23 @@ export default function Contact() {
     e.preventDefault();
     setStatus("submitting");
 
-    // Simulate form submission - in production, connect to your backend/API
+    // Simulate form submission delay - no backend connected
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    // For demo purposes, show success
-    // Replace with actual API call:
-    // const response = await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) });
+    // NOTE: This form does not currently send messages.
+    // No backend API is connected. Submissions are not delivered.
+    // For actual contact, use the email link in the contact information section.
     setStatus("success");
     setFormData({ name: "", email: "", company: "", service: "", message: "" });
   };
 
   const services = [
-    { value: "data-analysis", label: "Data Analysis & Reporting" },
-    { value: "powerbi-dashboards", label: "Power BI Dashboard Development" },
-    { value: "sql-database", label: "SQL Database & Analytics" },
-    { value: "python-ml", label: "Python Automation & ML" },
-    { value: "excel-automation", label: "Excel Automation & Modeling" },
-    { value: "consulting-advisory", label: "Data Strategy & Advisory" },
+    { value: "excel-data-cleaning", label: "Excel Data Cleaning" },
+    { value: "excel-automation", label: "Excel Automation" },
+    { value: "powerbi-dashboards", label: "Power BI Dashboards" },
+    { value: "sql-data-analysis", label: "SQL Data Analysis" },
+    { value: "python-data-processing", label: "Python Data Processing" },
+    { value: "business-reporting", label: "Business Reporting" },
     { value: "other", label: "Other / Not Sure" },
   ];
 
@@ -55,9 +57,8 @@ export default function Contact() {
             <span className="gradient-text">Together</span>
           </h2>
           <p className="text-slate-300 text-lg max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: "100ms" }}>
-            Ready to turn your data into insights? I&apos;m available for freelance
-            projects, consulting engagements, and remote work. Let&apos;s discuss
-            how I can help your business.
+            Available for freelance projects, consulting engagements, and remote full-time roles.
+            Based in Mossel Bay, South Africa (GMT+2) — timezone flexible for international clients.
           </p>
         </div>
 
@@ -70,7 +71,7 @@ export default function Contact() {
               </h3>
               <div className="space-y-6">
                 <a
-                  href="mailto:julian.lombard@email.com"
+                  href="mailto:julianlombard333@gmail.com"
                   className="flex items-center gap-4 p-4 glass rounded-xl hover:glass-strong transition-all group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center flex-shrink-0 text-violet-400 group-hover:scale-110 transition-transform">
@@ -80,12 +81,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-slate-500 uppercase tracking-wider">Email</div>
-                    <div className="text-lg font-medium text-slate-100 group-hover:text-violet-400 transition-colors">julian.lombard@email.com</div>
+                    <div className="text-lg font-medium text-slate-100 group-hover:text-violet-400 transition-colors">julianlombard333@gmail.com</div>
                   </div>
                 </a>
 
                 <a
-                  href="https://linkedin.com/in/julianlombard"
+                  href="https://www.linkedin.com/in/julian-lombard-21b877277/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 glass rounded-xl hover:glass-strong transition-all group"
@@ -97,7 +98,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-slate-500 uppercase tracking-wider">LinkedIn</div>
-                    <div className="text-lg font-medium text-slate-100 group-hover:text-blue-400 transition-colors">linkedin.com/in/julianlombard</div>
+                    <div className="text-lg font-medium text-slate-100 group-hover:text-blue-400 transition-colors">linkedin.com/in/julian-lombard-21b877277</div>
                   </div>
                 </a>
 
@@ -109,7 +110,7 @@ export default function Contact() {
                 >
                   <div className="w-12 h-12 rounded-xl bg-slate-500/10 flex items-center justify-center flex-shrink-0 text-slate-400 group-hover:scale-110 transition-transform">
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                      <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
                     </svg>
                   </div>
                   <div>
@@ -118,9 +119,7 @@ export default function Contact() {
                   </div>
                 </a>
 
-                <div
-                  className="flex items-center gap-4 p-4 glass rounded-xl"
-                >
+                <div className="flex items-center gap-4 p-4 glass rounded-xl">
                   <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center flex-shrink-0 text-green-400">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -129,7 +128,19 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-slate-500 uppercase tracking-wider">Location</div>
-                    <div className="text-lg font-medium text-slate-100">San Francisco, CA (Remote Worldwide)</div>
+                    <div className="text-lg font-medium text-slate-100">Mossel Bay, Western Cape, South Africa (GMT+2)</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 p-4 glass rounded-xl">
+                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0 text-amber-400">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-sm text-slate-500 uppercase tracking-wider">Phone</div>
+                    <div className="text-lg font-medium text-slate-100">+27 72 596 8603</div>
                   </div>
                 </div>
               </div>
@@ -144,15 +155,15 @@ export default function Contact() {
                 <div className="flex items-center gap-4 p-4 glass rounded-xl">
                   <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse" aria-hidden="true" />
                   <div>
-                    <div className="font-medium">Currently Accepting New Projects</div>
-                    <div className="text-sm text-slate-400">Available for freelance & consulting engagements</div>
+                    <div className="font-medium">Open to New Opportunities</div>
+                    <div className="text-sm text-slate-400">Freelance, contract, and remote full-time roles</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 p-4 glass rounded-xl">
                   <div className="w-3 h-3 rounded-full bg-amber-400 animate-pulse" aria-hidden="true" />
                   <div>
                     <div className="font-medium">Remote-First</div>
-                    <div className="text-sm text-slate-400">Timezone flexible (PST/EST/GMT friendly)</div>
+                    <div className="text-sm text-slate-400">Timezone flexible (GMT+2 / PST / EST friendly)</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 p-4 glass rounded-xl">
@@ -160,6 +171,13 @@ export default function Contact() {
                   <div>
                     <div className="font-medium">Response Time</div>
                     <div className="text-sm text-slate-400">Typically within 24 hours on business days</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 p-4 glass rounded-xl">
+                  <div className="w-3 h-3 rounded-full bg-violet-400 animate-pulse" aria-hidden="true" />
+                  <div>
+                    <div className="font-medium">Portfolio Domain</div>
+                    <div className="text-sm text-slate-400">julianlombard.com</div>
                   </div>
                 </div>
               </div>
@@ -186,7 +204,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full px-4 py-3 bg-navy-900 border border-navy-700 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500 transition-all"
-                      placeholder="Julian Lombard"
+                      placeholder="Julian Paul Lombard"
                       aria-required="true"
                     />
                   </div>
@@ -281,11 +299,11 @@ export default function Contact() {
                       Sending...
                     </span>
                   ) : status === "success" ? (
-                    <span className="flex items-center justify-center gap-2">
+                    <span className="flex items-center justify-center gap-2 text-amber-400">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                       </svg>
-                      Message Sent Successfully!
+                      Form Submitted (Demo Only — Not Sent)
                     </span>
                   ) : (
                     "Send Message"
@@ -294,14 +312,14 @@ export default function Contact() {
 
                 {status === "error" && (
                   <p className="text-red-400 text-center text-sm" role="alert">
-                    Something went wrong. Please try again or email me directly.
+                    Something went wrong. Please try again or email me directly at julianlombard333@gmail.com
                   </p>
                 )}
 
                 <p className="text-xs text-slate-500 text-center">
-                  By submitting this form, you agree to your data being processed in accordance with my{" "}
-                  <a href="/privacy" className="text-violet-400 hover:underline">Privacy Policy</a>
-                  . No spam, ever.
+                  This form is a demo — no backend is connected. Messages are not sent.
+                  For inquiries, email <a href="mailto:julianlombard333@gmail.com" className="text-violet-400 hover:underline">julianlombard333@gmail.com</a>
+                  directly. See <a href="/privacy" className="text-violet-400 hover:underline">Privacy Policy</a>.
                 </p>
               </div>
             </form>

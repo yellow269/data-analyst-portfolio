@@ -3,38 +3,48 @@
 export default function About() {
   const experience = [
     {
-      role: "Senior Data Analyst",
-      company: "Tech Solutions Inc.",
-      period: "2022 - Present",
+      role: "Data Analyst Intern",
+      company: "Koro Creek Golf Estate",
+      period: "2019 - 2024 (5 years)",
+      location: "Mossel Bay, Western Cape, South Africa",
       description:
-        "Leading data analytics initiatives for enterprise clients. Designed and implemented Power BI dashboards serving 200+ users. Automated reporting workflows reducing manual effort by 80%. Collaborated with stakeholders to define KPIs and build self-service analytics platforms.",
+        "Progressed from Data Entry Clerk to Data Analyst Intern over 5 years. Managed daily business data operations, developed automated reporting solutions in Excel and Power BI, performed data cleaning and analysis for operational decision-making, and collaborated with management to identify key metrics and build dashboards for golf estate operations, membership, and financial tracking.",
+      achievements: [
+        "Automated weekly/monthly reporting reducing manual effort by 70%",
+        "Built Power BI dashboards for membership, revenue, and operations tracking",
+        "Developed Excel models for financial forecasting and budgeting",
+        "Cleaned and maintained 5+ years of historical business data",
+        "Trained staff on data entry best practices and reporting tools",
+      ],
     },
     {
-      role: "Data Analyst",
-      company: "Analytics Pro Ltd.",
-      period: "2020 - 2022",
+      role: "IT Support Consultant / Freelancer",
+      company: "JPTeckSolutions",
+      period: "January 2020 - Present",
+      location: "Mossel Bay, Western Cape, South Africa (Remote)",
       description:
-        "Performed exploratory data analysis on large datasets using SQL and Python. Built predictive models for customer churn and sales forecasting. Created automated Excel reporting templates used across departments. Presented insights to C-level executives quarterly.",
-    },
-    {
-      role: "Junior Data Analyst",
-      company: "DataDrive Consulting",
-      period: "2019 - 2020",
-      description:
-        "Supported senior analysts in data cleaning, validation, and visualization projects. Developed SQL queries for data extraction and transformation. Assisted in Power BI dashboard development and maintenance. Learned best practices in data governance and documentation.",
+        "Self-employed IT support consultant providing hardware/software troubleshooting, network setup, data backup solutions, and custom reporting for small businesses. Developed Excel automation tools and Power BI dashboards for clients in retail, hospitality, and professional services sectors.",
+      achievements: [
+        "Delivered 20+ custom Excel/Power BI solutions for small business clients",
+        "Implemented automated backup and disaster recovery for 10+ clients",
+        "Reduced client reporting time by 60-80% through automation",
+        "Provided remote support across South Africa and internationally",
+      ],
     },
   ];
 
   const education = [
     {
-      degree: "M.Sc. Business Analytics",
-      school: "University of Technology",
-      year: "2019",
+      degree: "Certificate: Data Analyst to Data Scientist",
+      school: "Optimi College",
+      year: "2023",
+      details: "Comprehensive program covering Python, Pandas, NumPy, SQL, Power BI, statistics, machine learning fundamentals, and data visualisation.",
     },
     {
-      degree: "B.Sc. Computer Science",
-      school: "State University",
-      year: "2017",
+      degree: "Matric (National Senior Certificate)",
+      school: "South African High School",
+      year: "2018",
+      details: "Completed with Mathematics and Physical Sciences.",
     },
   ];
 
@@ -53,13 +63,14 @@ export default function About() {
             id="about-title"
             className="text-4xl md:text-5xl font-bold mb-4 animate-slide-up"
           >
-            Turning Complex Data into{" "}
-            <span className="gradient-text">Clear Business Value</span>
+            From Data Entry to{" "}
+            <span className="gradient-text">Data Analyst</span>
           </h2>
           <p className="text-slate-300 text-lg max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: "100ms" }}>
-            With over 5 years of experience in data analytics and business intelligence,
-            I specialize in transforming raw, messy data into actionable insights that
-            drive strategic decision-making and business growth.
+            Junior Data Analyst with 5 years of hands-on business data experience at Koro Creek Golf Estate,
+            progressing from Data Entry Clerk to Data Analyst Intern. Combined with freelance IT consulting
+            through JPTeckSolutions since 2020. Passionate about turning raw data into clear, actionable insights
+            for international remote opportunities.
           </p>
         </div>
 
@@ -68,7 +79,7 @@ export default function About() {
             <div className="glass-strong rounded-2xl p-8">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                 <span className="w-2 h-8 bg-violet-500 rounded-full" />
-                Professional Journey
+                Professional Experience
               </h3>
               <div className="space-y-8">
                 {experience.map((exp, index) => (
@@ -83,8 +94,21 @@ export default function About() {
                         <span className="text-lg font-semibold">{exp.role}</span>
                         <span className="text-violet-400 font-medium">{exp.company}</span>
                       </div>
-                      <div className="text-sm text-slate-500 mb-3">{exp.period}</div>
-                      <p className="text-slate-300">{exp.description}</p>
+                      <div className="text-sm text-slate-500 mb-3 flex flex-wrap gap-4">
+                        <span>{exp.period}</span>
+                        <span>{exp.location}</span>
+                      </div>
+                      <p className="text-slate-300 mb-4">{exp.description}</p>
+                      <ul className="space-y-1 pl-4">
+                        {exp.achievements.map((achievement, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-slate-300">
+                            <svg className="w-4 h-4 text-violet-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                            {achievement}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 ))}
@@ -94,7 +118,7 @@ export default function About() {
             <div className="glass-strong rounded-2xl p-8">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                 <span className="w-2 h-8 bg-violet-500 rounded-full" />
-                Education
+                Education & Certifications
               </h3>
               <div className="space-y-6">
                 {education.map((edu, index) => (
@@ -112,6 +136,7 @@ export default function About() {
                       <div className="font-semibold">{edu.degree}</div>
                       <div className="text-slate-400">{edu.school}</div>
                       <div className="text-xs text-slate-500">{edu.year}</div>
+                      <div className="text-sm text-slate-300 mt-1">{edu.details}</div>
                     </div>
                   </div>
                 ))}
@@ -202,13 +227,13 @@ export default function About() {
             <div className="glass-strong rounded-2xl p-8">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                 <span className="w-2 h-8 bg-violet-500 rounded-full" />
-                Core Values
+                Career Focus
               </h3>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { title: "Accuracy First", desc: "Every insight is validated through rigorous testing and cross-verification." },
-                  { title: "Business Impact", desc: "Analytics must drive decisions. I focus on actionable outcomes, not just charts." },
-                  { title: "Continuous Learning", desc: "Staying current with evolving tools, techniques, and industry best practices." },
+                  { title: "International Remote Roles", desc: "Seeking full-time remote Data Analyst positions with global companies." },
+                  { title: "Freelance Analytics", desc: "Available for contract projects: dashboards, automation, reporting." },
+                  { title: "Continuous Growth", desc: "Advancing toward Senior Data Analyst and Data Scientist roles." },
                 ].map((value, index) => (
                   <div
                     key={value.title}

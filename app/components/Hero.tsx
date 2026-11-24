@@ -25,7 +25,7 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <span className="inline-block px-4 py-2 rounded-full bg-violet-500/10 text-violet-400 text-sm font-medium mb-6 animate-fade-in">
-              Data Analyst & Business Intelligence Specialist
+              Junior Data Analyst | Power BI | Excel | SQL | Python
             </span>
 
             <h1
@@ -33,14 +33,17 @@ export default function Hero() {
               className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-slide-up"
               style={{ animationDelay: "100ms" }}
             >
-              Transforming Data into{" "}
-              <span className="gradient-text">Actionable Insights</span>
+              Julian Paul Lombard
             </h1>
 
+            <h2 className="text-2xl md:text-3xl text-slate-300 font-medium mb-6 animate-slide-up" style={{ animationDelay: "200ms" }}>
+              Turning data into insights that drive better business decisions.
+            </h2>
+
             <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed animate-slide-up" style={{ animationDelay: "200ms" }}>
-              I help businesses make data-driven decisions through expert analysis,
-              interactive dashboards, and automated reporting solutions using
-              Power BI, SQL, Python, and Excel.
+              Junior Data Analyst with 5 years of business data experience progressing
+              from Data Entry to Data Analyst Intern. Specialising in Power BI, Excel,
+              SQL, and Python for data cleaning, analysis, visualisation, and automation.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up" style={{ animationDelay: "300ms" }}>
@@ -48,28 +51,34 @@ export default function Hero() {
                 href="#projects"
                 className="px-8 py-4 bg-violet-500 hover:bg-violet-600 text-white font-semibold rounded-xl transition-all hover:shadow-[0_0_30px_rgba(127,34,254,0.4)]"
               >
-                View My Work
+                View My Projects
+              </Link>
+              <Link
+                href="/resume"
+                className="px-8 py-4 border border-violet-500/50 hover:bg-violet-500/10 text-violet-400 hover:text-white font-semibold rounded-xl transition-all"
+              >
+                Download My CV
               </Link>
               <Link
                 href="#contact"
-                className="px-8 py-4 border border-violet-500/50 hover:bg-violet-500/10 text-violet-400 hover:text-white font-semibold rounded-xl transition-all"
+                className="px-8 py-4 border border-slate-600 hover:bg-slate-800 text-slate-300 hover:text-white font-semibold rounded-xl transition-all"
               >
-                Get In Touch
+                Contact Me
               </Link>
             </div>
 
             <div className="mt-16 grid grid-cols-3 gap-6 animate-slide-up" style={{ animationDelay: "400ms" }}>
               <div className="p-4 glass rounded-xl">
                 <div className="text-3xl font-bold gradient-text">5+</div>
-                <div className="text-slate-400 text-sm">Years Experience</div>
+                <div className="text-slate-400 text-sm">Years Business Data Experience</div>
               </div>
               <div className="p-4 glass rounded-xl">
-                <div className="text-3xl font-bold gradient-text">50+</div>
-                <div className="text-slate-400 text-sm">Projects Delivered</div>
+                <div className="text-3xl font-bold gradient-text">2023</div>
+                <div className="text-slate-400 text-sm">Data Analyst Certification</div>
               </div>
               <div className="p-4 glass rounded-xl">
-                <div className="text-3xl font-bold gradient-text">100%</div>
-                <div className="text-slate-400 text-sm">Client Satisfaction</div>
+                <div className="text-3xl font-bold gradient-text">2020+</div>
+                <div className="text-slate-400 text-sm">Freelance IT Support</div>
               </div>
             </div>
           </div>
@@ -81,14 +90,14 @@ export default function Hero() {
                   <div className="w-3 h-3 rounded-full bg-red-500" aria-hidden="true" />
                   <div className="w-3 h-3 rounded-full bg-yellow-500" aria-hidden="true" />
                   <div className="w-3 h-3 rounded-full bg-green-500" aria-hidden="true" />
-                  <div className="ml-4 text-xs text-slate-500 font-mono">dashboard.pbix</div>
+                  <div className="ml-4 text-xs text-slate-500 font-mono">superstore-sales.pbix</div>
                 </div>
                 <div className="p-6 h-[400px] relative">
                   <div className="grid grid-cols-3 gap-4 mb-6">
                     {[
-                      { label: "Total Revenue", value: "$2.4M", change: "+12.5%", trend: "up" },
-                      { label: "Active Users", value: "18.7K", change: "+8.2%", trend: "up" },
-                      { label: "Conversion Rate", value: "3.24%", change: "-0.4%", trend: "down" },
+                      { label: "Total Sales", value: "$2.3M", change: "+15.2%", trend: "up" },
+                      { label: "Orders", value: "9,994", change: "+8.7%", trend: "up" },
+                      { label: "Avg Order Value", value: "$230", change: "+5.9%", trend: "up" },
                     ].map((kpi, i) => (
                       <div
                         key={i}
@@ -109,12 +118,12 @@ export default function Hero() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="glass rounded-xl p-4 h-48 flex items-end justify-around">
                       {[
-                        { month: "Jan", value: 45 },
-                        { month: "Feb", value: 62 },
-                        { month: "Mar", value: 48 },
-                        { month: "Apr", value: 75 },
-                        { month: "May", value: 68 },
-                        { month: "Jun", value: 82 },
+                        { month: "Jan", value: 42 },
+                        { month: "Feb", value: 58 },
+                        { month: "Mar", value: 45 },
+                        { month: "Apr", value: 71 },
+                        { month: "May", value: 65 },
+                        { month: "Jun", value: 78 },
                       ].map((bar, i) => (
                         <div key={i} className="flex flex-col items-center gap-1 w-full">
                           <div
@@ -126,13 +135,12 @@ export default function Hero() {
                       ))}
                     </div>
                     <div className="glass rounded-xl p-4 h-48">
-                      <div className="text-slate-400 text-sm mb-4">Revenue by Category</div>
+                      <div className="text-slate-400 text-sm mb-4">Sales by Category</div>
                       <div className="space-y-3 h-[calc(100%-2rem)]">
                         {[
-                          { name: "Electronics", value: 45, color: "violet-500" },
-                          { name: "Clothing", value: 28, color: "violet-400" },
-                          { name: "Home & Garden", value: 18, color: "violet-300" },
-                          { name: "Sports", value: 9, color: "violet-200" },
+                          { name: "Technology", value: 36, color: "violet-500" },
+                          { name: "Furniture", value: 32, color: "violet-400" },
+                          { name: "Office Supplies", value: 32, color: "violet-300" },
                         ].map((cat, i) => (
                           <div key={i} className="flex items-center gap-3">
                             <div

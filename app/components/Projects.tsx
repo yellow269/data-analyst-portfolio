@@ -1,118 +1,95 @@
 "use client";
 
-import Link from "next/link";
-
 const projects = [
   {
-    id: "sales-dashboard",
-    title: "Executive Sales Dashboard",
+    id: "superstore-sales",
+    title: "Superstore Sales Performance Dashboard",
     category: "Power BI",
     description:
-      "Enterprise-grade sales performance dashboard with real-time data refresh, drill-through capabilities, and role-based access control for 200+ users across 5 regions.",
-    image: "/projects/sales-dashboard.jpg",
-    technologies: ["Power BI", "DAX", "Power Query", "Azure SQL", "Row-Level Security"],
+      "Interactive Power BI dashboard analyzing sales performance across categories, regions, and time periods. Built with DAX measures, drill-through capabilities, and dynamic filtering for business users.",
+    image: "/projects/superstore-sales.svg",
+    technologies: ["Power BI", "DAX", "Power Query", "Data Modeling"],
     highlights: [
-      "Reduced reporting time from 4 hours to 15 minutes",
-      "Enabled self-service analytics for regional managers",
-      "Implemented dynamic KPI targeting with what-if parameters",
+      "Analyzes 9,994 orders across 3 categories and 4 regions",
+      "Dynamic KPIs: Total Sales, Orders, Average Order Value",
+      "Drill-through to transaction-level detail",
+      "Time intelligence for YoY, MoM, YTD comparisons",
     ],
-    github: "https://github.com/julian/sales-dashboard",
-    live: "https://app.powerbi.com/view?r=example",
-    download: "/downloads/sales-dashboard.pbix",
+    github: null,
+    live: null,
+    download: "/downloads/superstore-sales.pbix",
+    status: "completed",
   },
   {
     id: "customer-analytics",
-    title: "Customer 360 Analytics Platform",
-    category: "SQL + Python",
+    title: "Customer Analytics & Segmentation",
+    category: "SQL + Excel",
     description:
-      "End-to-end customer analytics solution combining SQL data warehousing with Python ML models for churn prediction, lifetime value estimation, and segmentation.",
-    image: "/projects/customer-analytics.jpg",
-    technologies: ["PostgreSQL", "Python", "scikit-learn", "dbt", "Airflow", "Tableau"],
+      "Customer segmentation analysis using RFM (Recency, Frequency, Monetary) modeling and SQL queries. Identifies high-value segments, churn risk, and retention opportunities for targeted marketing.",
+    image: "/projects/customer-analytics.svg",
+    technologies: ["SQL", "Excel", "Power Query", "Pivot Tables"],
     highlights: [
-      "Identified 23% of at-risk customers 60 days before churn",
-      "Increased customer retention by 15% through targeted campaigns",
-      "Automated weekly scoring pipeline for 2M+ customers",
+      "RFM segmentation with 5 customer tiers",
+      "Churn risk scoring based on purchase patterns",
+      "Segment-level revenue and retention analysis",
+      "Automated monthly refresh via Power Query",
     ],
-    github: "https://github.com/julian/customer-analytics",
+    github: null,
     live: null,
-    download: "/downloads/customer-analytics.ipynb",
+    download: "/downloads/customer-analytics.xlsx",
+    status: "completed",
+  },
+  {
+    id: "python-automation",
+    title: "Python Data Analysis & Automation",
+    category: "Python + Pandas",
+    description:
+      "Collection of Python scripts and Jupyter notebooks for automated data cleaning, exploratory analysis, and report generation. Demonstrates pandas, NumPy, and visualization workflows for business datasets.",
+    image: "/projects/python-automation.svg",
+    technologies: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter"],
+    highlights: [
+      "Automated data cleaning pipeline with validation rules",
+      "Exploratory data analysis templates for new datasets",
+      "Statistical summaries and correlation analysis",
+      "Automated chart generation for reporting",
+    ],
+    github: null,
+    live: null,
+    download: "/downloads/python-automation.zip",
+    status: "in-progress",
   },
   {
     id: "financial-reporting",
-    title: "Automated Financial Reporting Suite",
-    category: "Excel + Power Query",
+    title: "Business Financial Reporting",
+    category: "Excel + Power BI",
     description:
-      "Comprehensive financial reporting automation replacing manual processes. Dynamic dashboards with drill-down capabilities, variance analysis, and executive summaries.",
-    image: "/projects/financial-reporting.jpg",
-    technologies: ["Excel", "Power Query", "Power Pivot", "DAX", "VBA", "Office Scripts"],
+      "Comprehensive financial reporting solution combining Excel modeling with Power BI visualization. Includes P&L, balance sheet, cash flow, variance analysis, and executive dashboards with drill-down.",
+    image: "/projects/financial-reporting.svg",
+    technologies: ["Excel", "Power BI", "Power Query", "DAX", "Power Pivot"],
     highlights: [
-      "Eliminated 40+ hours of manual work per month",
-      "Zero-error rate in automated consolidation",
-      "Real-time variance alerts for finance leadership",
+      "3-statement financial model (P&L, BS, CF)",
+      "Variance analysis with waterfall charts",
+      "Dynamic scenario modeling (Base/Best/Worst)",
+      "Automated data refresh from source systems",
     ],
-    github: "https://github.com/julian/financial-reporting",
+    github: null,
     live: null,
-    download: "/downloads/financial-reporting.xlsm",
-  },
-  {
-    id: "inventory-optimization",
-    title: "Inventory Optimization Model",
-    category: "Python + SQL",
-    description:
-      "Predictive inventory management system using demand forecasting and optimization algorithms to reduce stockouts while minimizing carrying costs.",
-    image: "/projects/inventory-optimization.jpg",
-    technologies: ["Python", "Prophet", "PostgreSQL", "Optimization", "Streamlit", "Docker"],
-    highlights: [
-      "Reduced stockouts by 35% while cutting inventory costs 18%",
-      "Dynamic safety stock calculations per SKU/location",
-      "Integrated with ERP via automated API pipeline",
-    ],
-    github: "https://github.com/julian/inventory-optimization",
-    live: "https://inventory-opt.example.com",
-    download: null,
-  },
-  {
-    id: "marketing-attribution",
-    title: "Multi-Touch Marketing Attribution",
-    category: "SQL + Power BI",
-    description:
-      "Marketing attribution model analyzing customer journeys across 12+ channels. Custom attribution logic with Power BI visualization for marketing ROI optimization.",
-    image: "/projects/marketing-attribution.jpg",
-    technologies: ["SQL Server", "Power BI", "DAX", "Google Analytics API", "Facebook Ads API"],
-    highlights: [
-      "Revealed 40% of budget allocated to underperforming channels",
-      "Enabled data-driven budget reallocation saving $200K annually",
-      "Real-time campaign performance monitoring",
-    ],
-    github: "https://github.com/julian/marketing-attribution",
-    live: null,
-    download: "/downloads/marketing-attribution.pbix",
-  },
-  {
-    id: "hr-analytics",
-    title: "HR Workforce Analytics Dashboard",
-    category: "Power BI",
-    description:
-      "Comprehensive HR analytics platform tracking headcount, turnover, diversity, compensation, and engagement metrics with predictive workforce planning.",
-    image: "/projects/hr-analytics.jpg",
-    technologies: ["Power BI", "DAX", "Azure Synapse", "Python", "HRIS Integration"],
-    highlights: [
-      "Predicted turnover risk with 82% accuracy",
-      "Identified compensation inequities across departments",
-      "Supported workforce planning for 5,000+ employees",
-    ],
-    github: "https://github.com/julian/hr-analytics",
-    live: "https://app.powerbi.com/view?r=hr-example",
-    download: null,
+    download: "/downloads/financial-reporting.pbix",
+    status: "in-progress",
   },
 ];
 
 const categoryColors: Record<string, string> = {
   "Power BI": "violet",
-  "SQL + Python": "blue",
-  "Excel + Power Query": "amber",
-  "Python + SQL": "green",
-  "SQL + Power BI": "pink",
+  "SQL + Excel": "blue",
+  "Python + Pandas": "green",
+  "Excel + Power BI": "amber",
+};
+
+const statusLabels: Record<string, { label: string; color: string }> = {
+  completed: { label: "Completed", color: "text-green-400 bg-green-500/10 border-green-500/20" },
+  "in-progress": { label: "In Progress", color: "text-amber-400 bg-amber-500/10 border-amber-500/20" },
+  placeholder: { label: "Placeholder", color: "text-slate-500 bg-slate-500/10 border-slate-500/20" },
 };
 
 export default function Projects() {
@@ -135,13 +112,13 @@ export default function Projects() {
             <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-slate-300 text-lg max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: "100ms" }}>
-            A curated collection of real-world data analytics and business
-            intelligence solutions. Each project demonstrates end-to-end delivery
-            from requirements gathering to production deployment.
+            A curated collection of data analytics and business intelligence projects.
+            Each demonstrates end-to-end delivery from requirements to deployment.
+            Projects marked &#34;In Progress&#34; are actively being developed &mdash; check GitHub for updates.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {projects.map((project, index) => (
             <article
               key={project.id}
@@ -155,10 +132,9 @@ export default function Projects() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="text-6xl opacity-50" role="img" aria-hidden="true">
                     {project.category === "Power BI" && "📊"}
-                    {project.category === "SQL + Python" && "🐍"}
-                    {project.category === "Excel + Power Query" && "📑"}
-                    {project.category === "Python + SQL" && "⚙️"}
-                    {project.category === "SQL + Power BI" && "🔗"}
+                    {project.category === "SQL + Excel" && "🗄️"}
+                    {project.category === "Python + Pandas" && "🐍"}
+                    {project.category === "Excel + Power BI" && "📑"}
                   </span>
                 </div>
                 <div className="absolute top-4 left-4">
@@ -170,6 +146,11 @@ export default function Projects() {
                     }`}
                   >
                     {project.category}
+                  </span>
+                </div>
+                <div className="absolute top-4 right-4">
+                  <span className={`px-2 py-1 rounded-full text-xs font-medium border ${statusLabels[project.status]?.color || statusLabels.placeholder.color}`}>
+                    {statusLabels[project.status]?.label || "Project"}
                   </span>
                 </div>
               </div>
@@ -211,14 +192,16 @@ export default function Projects() {
                 </ul>
 
                 <div className="flex flex-wrap gap-2 pt-4 border-t border-navy-700">
-                  <Link
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 min-w-[120px] px-3 py-2 text-center text-sm font-medium text-slate-300 hover:text-violet-400 transition-colors border border-navy-700 rounded-lg hover:border-violet-500/50"
-                  >
-                    Code
-                  </Link>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 min-w-[120px] px-3 py-2 text-center text-sm font-medium text-slate-300 hover:text-violet-400 transition-colors border border-navy-700 rounded-lg hover:border-violet-500/50"
+                    >
+                      View Code
+                    </a>
+                  )}
                   {project.live && (
                     <a
                       href={project.live}
@@ -237,6 +220,11 @@ export default function Projects() {
                     >
                       Download
                     </a>
+                  )}
+                  {(!project.github && !project.live && !project.download) && (
+                    <span className="flex-1 min-w-[120px] px-3 py-2 text-center text-sm font-medium text-slate-500 bg-navy-800 border border-navy-700 rounded-lg">
+                      Assets Pending
+                    </span>
                   )}
                 </div>
               </div>
